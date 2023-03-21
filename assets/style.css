@@ -10,7 +10,7 @@
 body {
     margin: 0;
     font-family: 'Raleway', sans-serif;
-    font-size: 3em;
+    font-size: 2em;
     background: var(--bgcolor);
     color: var(--color);
     transition: background var(--transition) ease, color var(--transition) ease;
@@ -22,9 +22,9 @@ body {
 }
 
 #header {
-    padding: 2rem;
-    padding-block: 3rem;
-    font-size: 4rem;
+    padding: 1rem;
+    padding-block: 2rem;
+    font-size: 2.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -40,7 +40,7 @@ body {
 }
 
 #set-icon {
-    height: 80%;
+    height: 50%;
     filter: invert(var(--invert));
     transform: rotate(0);
     transition: invert var(--transition) ease, transform var(--transition) ease-in-out;
@@ -50,7 +50,7 @@ body {
     min-height: 100lvh;
     display: flex;
     flex-direction: column;
-    gap: 3rem;
+    gap: 2rem;
     padding-bottom: 3rem;
 }
 
@@ -58,20 +58,21 @@ body {
     content: '';
     border: 3px solid var(--accent);
     border-radius: 99px;
-    margin-inline: 2rem;
+    margin-inline: 1rem;
     transition: border var(--transition) ease;
+    background: var(--accent);
 }
 
 .content-section__header {
-    padding-left: 2rem;
+    padding-left: 1rem;
 }
 
 .content-section {
     display: grid;
     place-items: center;
     grid-template-columns: repeat(var(--columns), 1fr);
-    gap: 2rem;
-    padding-inline: 2rem;
+    gap: 1rem;
+    padding-inline: 1rem;
 }
 
 .card {
@@ -79,7 +80,7 @@ body {
     display: grid;
     place-items: center;
     width: 100%;
-    border-radius: 2rem;
+    border-radius: 1rem;
     overflow: hidden;
     position: relative;
 }
@@ -95,28 +96,27 @@ body {
     display: grid;
     place-items: center;
     color: lightgreen;
-    font-size: 2em;
+    font-size: 1em;
     position: absolute;
     background: var(--bgcolor);
     inset: 0;
     opacity: .8;
     border: 2px solid var(--accent);
-    border-radius: 2rem;
+    border-radius: 1rem;
     transition: background var(--transition) ease;
 }
 
 #settings {
-    padding: 2rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    z-index: -1;
-
+    font-size: 1.8rem;
 }
 
 #settings > div {
     display: flex;
-    gap: 1rem;
+    gap: .5rem;
     align-items: center;
     height: 1.5em;
 
@@ -124,6 +124,7 @@ body {
 
 #settings > div > div:nth-child(1) {
     margin-right: auto;
+
 }
 
 .set {
@@ -149,13 +150,13 @@ body {
 
 #theme1 .color1 {
     position: absolute;
-    inset: -1rem;
+    inset: -2rem;
     bottom: 50%;
     background: white;
 }
 
 #theme1 .color2 {
-    inset: -1rem;
+    inset: -2rem;
     top: 50%;
     position: absolute;
     background: black;
@@ -163,13 +164,13 @@ body {
 
 #theme2 .color1 {
     position: absolute;
-    inset: -1rem;
+    inset: -2rem;
     bottom: 50%;
     background: white;
 }
 
 #theme2 .color2 {
-    inset: -1rem;
+    inset: -2rem;
     top: 50%;
     position: absolute;
     background: #c44569;
@@ -177,13 +178,13 @@ body {
 
 #theme3 .color1 {
     position: absolute;
-    inset: -1rem;
+    inset: -2rem;
     bottom: 50%;
     background: black;
 }
 
 #theme3 .color2 {
-    inset: -1rem;
+    inset: -2rem;
     top: 50%;
     position: absolute;
     background: white;
@@ -191,13 +192,13 @@ body {
 
 #theme4 .color1 {
     position: absolute;
-    inset: -1rem;
+    inset: -2rem;
     bottom: 50%;
     background: black;
 }
 
 #theme4 .color2 {
-    inset: -1rem;
+    inset: -2rem;
     top: 50%;
     position: absolute;
     background: #cf6a87;
