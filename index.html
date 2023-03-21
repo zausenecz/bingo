@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<meta charset="UTF-8">
+    <link rel="stylesheet" href="assets/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600&display=swap" rel="stylesheet">
+
+    <script>
+        var size = Number(localStorage['size'] || '2');
+        var theme = Number(localStorage['theme'] || '1');
+        var setsOpened = true;
+
+
+        function setsize(num) {
+            size = num;
+            localStorage['size'] = num;
+            update();
+        }
+
+        function settheme(num) {
+            theme = num;
+            localStorage['theme'] = num;
+            update();
+        }
+
+        function sets() {
+
+            if (!setsOpened) {
+                document.getElementById("set-icon").setAttribute('style', 'transform: rotate(360deg)');
+                document.getElementById("settings").setAttribute('style', 'display: grid');
+                setsOpened = true;
+            } else {
+                document.getElementById("set-icon").setAttribute('style', 'transform: rotate(0deg)');
+                document.getElementById("settings").setAttribute('style', 'display: none');
+                setsOpened = false;
+            }
+
+        }
+
+        function update() {
+            switch (size) {
+                case 2:
+                    document.documentElement.style.setProperty('--columns', 2);
+
+                    document.getElementById("size2").setAttribute('style', 'height: 2em');
+                    document.getElementById("size3").setAttribute('style', 'height: 1.5em');
+                    document.getElementById("size4").setAttribute('style', 'height: 1.5em');
+                    break;
+
+                case 3:
+                    document.documentElement.style.setProperty('--columns', 3);
+
+                    document.getElementById("size2").setAttribute('style', 'height: 1.5em');
+                    document.getElementById("size3").setAttribute('style', 'height: 2em');
+                    document.getElementById("size4").setAttribute('style', 'height: 1.5em');
+                    break;
+
+                case 4:
+                    document.documentElement.style.setProperty('--columns', 4);
+
+                    document.getElementById("size2").setAttribute('style', 'height: 1.5em');
+                    document.getElementById("size3").setAttribute('style', 'height: 1.5em');
+                    document.getElementById("size4").setAttribute('style', 'height: 2em');
+                    break;
+
+                default:
+                    break;
+            }
+            switch (theme) {
+                case 1:
+                    document.documentElement.style.setProperty('--bgcolor', 'white');
+                    document.documentElement.style.setProperty('--accent', 'black');
+                    document.documentElement.style.setProperty('--color', 'black');
+                    document.documentElement.style.setProperty('--invert', 0);
+
+                    document.getElementById("theme1").setAttribute('style', 'height: 2em');
+                    document.getElementById("theme2").setAttribute('style', 'height: 1.5em');
+                    document.getElementById("theme3").setAttribute('style', 'height: 1.5em');
+                    document.getElementById("theme4").setAttribute('style', 'height: 1.5em');
+
+                    break;
+                case 2:
+                    document.documentElement.style.setProperty('--bgcolor', 'white');
+                    document.documentElement.style.setProperty('--accent', '#c44569');
+                    document.documentElement.style.setProperty('--color', 'black');
+                    document.documentElement.style.setProperty('--invert', 0);
+
+                    document.getElementById("theme1").setAttribute('style', 'height: 1.5em');
+                    document.getElementById("theme2").setAttribute('style', 'height: 2em');
+                    document.getElementById("theme3").setAttribute('style', 'height: 1.5em');
+                    document.getElementById("theme4").setAttribute('style', 'height: 1.5em');
+                    break;
+                case 3:
+                    document.documentElement.style.setProperty('--bgcolor', 'black');
+                    document.documentElement.style.setProperty('--accent', 'white');
+                    document.documentElement.style.setProperty('--color', 'white');
+                    document.documentElement.style.setProperty('--invert', 1);
+
+                    document.getElementById("theme1").setAttribute('style', 'height: 1.5em');
+                    document.getElementById("theme2").setAttribute('style', 'height: 1.5em');
+                    document.getElementById("theme3").setAttribute('style', 'height: 2em');
+                    document.getElementById("theme4").setAttribute('style', 'height: 1.5em');
+                    break;
+                case 4:
+                    document.documentElement.style.setProperty('--bgcolor', 'black');
+                    document.documentElement.style.setProperty('--accent', '#cf6a87');
+                    document.documentElement.style.setProperty('--color', 'white');
+                    document.documentElement.style.setProperty('--invert', 1);
+
+                    document.getElementById("theme1").setAttribute('style', 'height: 1.5em');
+                    document.getElementById("theme2").setAttribute('style', 'height: 1.5em');
+                    document.getElementById("theme3").setAttribute('style', 'height: 1.5em');
+                    document.getElementById("theme4").setAttribute('style', 'height: 2em');
+                    break;
+                default:
+                    break;
+            }
+        }
+
+    </script>
+
+</head>
+
+<body>
+    <div id="header">
+        <div>Курьер-бинго</div>
+        <div id="set-wrapper" onclick="sets()">
+            <img id="set-icon" src="assets/images/icons/setting.png">
+        </div>
+    </div>
+    <div id="settings">
+        <div id="sizes">
+            <div>Размер:</div>
+            <div class="set" id="size2" onclick="setsize(2)">2</div>
+            <div class="set setted" id="size3" onclick="setsize(3)">3</div>
+            <div class="set" id="size4" onclick="setsize(4)">4</div>
+        </div>
+        <div>
+            <div>Тема:</div>
+            <div class="theme set" id="theme1" onclick="settheme(1)">
+                <div class="colors">
+                    <div class="color1"></div>
+                    <div class="color2"></div>
+                </div>
+            </div>
+            <div class="theme set setted" id="theme2" onclick="settheme(2)">
+                <div class="colors">
+                    <div class="color1"></div>
+                    <div class="color2"></div>
+                </div>
+            </div>
+            <div class="theme set" id="theme3" onclick="settheme(3)">
+                <div class="colors">
+                    <div class="color1"></div>
+                    <div class="color2"></div>
+                </div>
+            </div>
+            <div class="theme set" id="theme4" onclick="settheme(4)">
+                <div class="colors">
+                    <div class="color1"></div>
+                    <div class="color2"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div id="content-wrapper">
+
+        <div class="content-section__header">
+            Легко
+        </div>
+        <div class="content-section">
+            <div class="card">
+                <img src="assets/images/tasks/e1.jpg">
+            </div>
+            <div class="card done">
+                <img src="assets/images/tasks/e2.jpg">
+            </div>
+            <div class="card">
+                <img src="assets/images/tasks/e3.jpg">
+            </div>
+            <div class="card">
+                <img src="assets/images/tasks/e4.jpg">
+            </div>
+            <div class="card">
+                <img src="assets/images/tasks/e5.jpg">
+            </div>
+            <div class="card">
+                <img src="assets/images/tasks/e6.jpg">
+            </div>
+
+        </div>
+        <div class="content-section__header">
+            Сложно
+        </div>
+        <div class="content-section">
+            <div class="card done">
+                <img src="assets/images/tasks/h1.jpg">
+            </div>
+            <div class="card">
+                <img src="assets/images/tasks/h2.jpg">
+            </div>
+            <div class="card">
+                <img src="assets/images/tasks/h3.jpg">
+            </div>
+            <div class="card">
+                <img src="assets/images/tasks/h4.jpg">
+            </div>
+            <div class="card">
+                <img src="assets/images/tasks/h5.jpg">
+            </div>
+            <div class="card">
+                <img src="assets/images/tasks/h6.jpg">
+            </div>
+            <div class="card done">
+                <img src="assets/images/tasks/h7.jpg">
+            </div>
+        </div>
+        <div class="content-section__header">
+            Невозможно
+        </div>
+        <div class="content-section">
+            <div class="card">
+                <img src="assets/images/tasks/i1.jpg">
+            </div>
+            <div class="card">
+                <img src="assets/images/tasks/i2.jpg">
+            </div>
+            <div class="card">
+                <img src="assets/images/tasks/i3.jpg">
+            </div>
+
+        </div>
+    </div>
+    <script>
+        update();
+        sets();
+
+    </script>
+</body>
+
+</html>
